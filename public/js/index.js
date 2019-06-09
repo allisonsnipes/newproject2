@@ -1,9 +1,10 @@
+
 // Get references to page elements
 var exampleText = document.querySelector('#example-text')
 var exampleDescription = document.querySelector('#example-description')
 var submitBtn = document.querySelector('#submit')
 var exampleList = document.querySelector('#example-list')
-
+/* global fetch, alert */
 // The API object contains methods for each kind of request we'll make
 class API {
   constructor (someDefault = 'defaultVal') {
