@@ -55,7 +55,7 @@ module.exports = {
 
 ```javascript
 // Creates mySQL connection using Knex.js
-const Knex = require('knex')(require('../../knexfile')[ENV])
+const Knex = require('knex')(require('../config/connection.js')[ENV])
 
 // Exports the connection for other files to use
 module.exports = Knex;
