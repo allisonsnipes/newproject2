@@ -12,7 +12,7 @@ const knex = require('../config/connection.js')
  * @class Example
  */
 class Example {
-  constructor (table = 'example') {
+  constructor (table = 'persons') {
     this.table = table
   }
 
