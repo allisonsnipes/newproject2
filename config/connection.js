@@ -8,7 +8,7 @@ const mysql = require('mysql')
 /* eslint-enable  no-unused-vars */
 
 // Creates mySQL connection using Knex.js
-const Knex = require('knex')(require('../config/connection.js')[ENV])
+const Knex = require('knex')(require('../knexfile')[ENV])
 
 // Exports the connection for other files to use working changes
 module.exports = Knex
