@@ -5,11 +5,10 @@ exports.up = function (knex, Promise) {
     table.string('last_name').notNullable()
     table.integer('age').notNullable()
     table.string('gender').notNullable()
-    table.string('organization').notNullable()
+    table.string('organizations').notNullable()
     table.string('country_origin').notNullable()
-    table.datetime('date_missing')
+    table.date('date_missing')
     table.boolean('is_found').defaultTo(false)
-    table.timestamps(false, true)
   })
 }
 
