@@ -34,3 +34,8 @@ INSERT INTO persons
     (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
 VALUES
     ("Jin Woo", "Ham", " ", 05-29-2017, "Daily NK", "Mexico", "0", "male");
+
+INSERT INTO persons
+    (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
+VALUES
+    ("JinWoo", "Hame", " ", 05-29-2017, "Daily NK", "Mexico", "0", "male");
