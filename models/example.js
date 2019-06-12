@@ -11,7 +11,7 @@ const knex = require('../config/connection.js')
  *
  * @class missing
  */
-class missingDB {
+class MissingDB {
   constructor (table = 'persons') {
     this.table = table
   }
@@ -54,4 +54,4 @@ class missingDB {
   }
 }
 
-module.exports = new missingDB()
+module.exports = new MissingDB()
