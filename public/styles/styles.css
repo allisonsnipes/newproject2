@@ -1,3 +1,32 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+.container {
+  margin: auto;
+  
+}
+
+.right {
+  float: rigth;
+}
+
+.left {
+  float: left;
+}
+footer {
+  margin: auto;
+  text-align: center;
+}
+

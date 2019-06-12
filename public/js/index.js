@@ -103,3 +103,18 @@ var handleDeleteBtnClick = function (event) {
 // Add event listeners to the submit and delete buttons
 submitBtn.addEventListener('click', handleFormSubmit)
 exampleList.addEventListener('click', handleDeleteBtnClick)
+
+
+//news api to grab about the missing journalist
+var url = 'https://newsapi.org/v2/everything?' +
+  'q=Apple&' +
+  'from=2019-06-12&' +
+  'sortBy=popularity&' +
+  'apiKey=68a88aebd0f8471f9fd73fa78e3c1e80';
+
+var req = new Request(url)
+
+fetch(req)
+  .then(function (response) {
+    console.log(response.json())
+  })
