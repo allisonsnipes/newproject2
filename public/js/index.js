@@ -1,3 +1,4 @@
+console.log('i am looking for indexjs file')
 
 // Get references to page elements
 var exampleText = document.querySelector('#example-text')
