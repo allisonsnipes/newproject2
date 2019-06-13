@@ -13,7 +13,7 @@ const knex = require('../config/connection.js')
  */
 // Class can be anything with any name
 class Missing {
-  constructor(table = 'persons') {
+  constructor (table = 'persons') {
     this.table = table
   }
 
@@ -23,7 +23,7 @@ class Missing {
    * @returns Promise
    * @memberof persons
    */
-  findAll() {
+  findAll () {
     return knex.select()
       .table(this.table)
   }
@@ -35,7 +35,7 @@ class Missing {
    * @returns Promise
    * @memberof persons
    */
-  create(values) {
+  create (values) {
     return knex(this.table)
       .returning('id')
       .insert(values)
@@ -48,7 +48,7 @@ class Missing {
    * @returns Promise
    * @memberof persons
    */
-  destroy(where) {
+  destroy (where) {
     return knex(this.table)
       .where(where)
       .del()
