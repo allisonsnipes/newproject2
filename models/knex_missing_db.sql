@@ -4,8 +4,7 @@ USE missingDB;
 
 CREATE TABLE persons
 (
-    id INT
-    AUTO_INCREMENT NOT NULL,
+    id INT AUTO_INCREMENT NOT NULL,
     first_name VARCHAR
     (50) NOT NULL,
     last_name VARCHAR
