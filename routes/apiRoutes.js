@@ -1,5 +1,5 @@
 // Dependencies
-const Example = require('../models/example')
+const Missing = require('../models/example')
 
 /**
  * apiRoutes: This routes file returns data to the client/view
@@ -10,26 +10,30 @@ const Example = require('../models/example')
 
 module.exports = function (app) {
   // Get all examples
-  app.get('/api/examples', function (req, res) {
-    Example.findAll()
-      .then(function (dbExamples) {
-        res.json(dbExamples)
+  app.get('/lists', function (req, res) {
+    Missing.findAll()
+      .then(function (result) {
+        res.json(result)
       })
   })
 
-  // Create a new example
-  app.post('/api/examples', function (req, res) {
-    Example.create(req.body)
-      .then(function (dbExample) {
-        res.json(dbExample)
-      })
-  })
-
-  // Delete an example by id
-  app.delete('/api/examples/:id', function (req, res) {
-    Example.destroy(req.params)
-      .then(function (dbExample) {
-        res.json(dbExample)
-      })
+  app.get('/', function (req, res) {
+    res.render('hello')
   })
 }
+// Create a new example
+//   app.post('/api/examples', function (req, res) {
+//     Example.create(req.body)
+//       .then(function (dbExample) {
+//         res.json(dbExample)
+//       })
+//   })
+
+//   // Delete an example by id
+//   app.delete('/api/examples/:id', function (req, res) {
+//     Example.destroy(req.params)
+//       .then(function (dbExample) {
+//         res.json(dbExample)
+//       })
+//   })
+// }

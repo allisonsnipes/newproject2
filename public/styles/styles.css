@@ -13,9 +13,10 @@
     flex: 1 1 calc(33% - 2rem);
   }
 }
+
 .container {
   margin: auto;
-  
+
 }
 
 .right {
@@ -29,4 +30,3 @@ footer {
   margin: auto;
   text-align: center;
 }
-

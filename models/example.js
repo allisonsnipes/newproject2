@@ -7,20 +7,21 @@
 const knex = require('../config/connection.js')
 
 /**
- * Queries the Example database
+ * Queries the missingDB database
  *
- * @class Example
+ * @class missingDB
  */
-class Example {
+// Class can be anything with any name
+class Missing {
   constructor (table = 'persons') {
     this.table = table
   }
 
   /**
    *
-   * Find all Examples in the table
+   * Find all missing persons in the table
    * @returns Promise
-   * @memberof Example
+   * @memberof persons
    */
   findAll () {
     return knex.select()
@@ -32,7 +33,7 @@ class Example {
  *
  * @param {Object} values The values to insert in the form of {column: value}
  * @returns Promise
- * @memberof Example
+ * @memberof persons
  */
   create (values) {
     return knex(this.table)
@@ -45,7 +46,7 @@ class Example {
    *
    * @param {Object} where The where clause in the form of {column: value}
    * @returns Promise
-   * @memberof Example
+   * @memberof persons
    */
   destroy (where) {
     return knex(this.table)
@@ -54,4 +55,4 @@ class Example {
   }
 }
 
-module.exports = new Example()
+module.exports = new Missing()
