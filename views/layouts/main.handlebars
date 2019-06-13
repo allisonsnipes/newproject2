@@ -412,16 +412,18 @@
     var firstname = $("#firstname").val()
     var lastname = $("#lastname").val()
     var age = $("#age").val()
+    var gender = $("input[name='gender']:checked").val();
     var datemissing = $("#dateMissing").val()
-    var organization = $("#org").val()
     var countryoforgin = $("#countySelection").val();
+    var organization = $("#org").val()
     var newjournalist = {
       firstname,
       lastname,
       age,
+      gender,
       datemissing,
-      organization,
-      countryoforgin
+      countryoforgin,
+      organization
     }
     console.log(firstname)
     $.post("/", newjournalist ) 
