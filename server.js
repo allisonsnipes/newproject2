@@ -7,6 +7,7 @@ require('dotenv').config()
 const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
+const bodyparser = require('body-parser')
 
 // const db = require('./models/example') // eslint-disable no-unused-consts
 
@@ -14,9 +15,10 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 // Middleware
-app.use(express.urlencoded({
-  extended: false
+app.use(bodyparser.urlencoded({
+  extended: true
 }))
+app.use(bodyparser.json())
 app.use(express.json())
 app.use(express.static('public'))
 

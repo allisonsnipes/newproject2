@@ -16,21 +16,21 @@ CREATE TABLE persons
 );
 
 INSERT INTO persons
-  (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
+  (first_name, last_name, age, date_missing, organization, country_origin, gender)
 VALUES
-  ("Acquitte", "Kisembo", 28, 06-26-2003, "Agence France-Presse", "Congo", "0", "male");
+  ("Acquitte", "Kisembo", 28, 06-26-2003, "Agence France-Presse", "Congo", "male");
 
 INSERT INTO persons
-  (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
+  (first_name, last_name, age, date_missing, organization, country_origin, gender)
 VALUES
-  ("Yelena", "Petrova", " ", 06-01-2014, "Freelance", "Iraq", "0", "female");
+  ("Yelena", "Petrova", " ", 06-01-2014, "Freelance", "Iraq", "female");
 
 INSERT INTO persons
-  (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
+  (first_name, last_name, age, date_missing, organization, country_origin, gender)
 VALUES
-  ("Alfredo", "Mota", 25, 04-02-2005, "Hermosillo Daily", "Mexico", "0", "male");
+  ("Alfredo", "Mota", 25, 04-02-2005, "Hermosillo Daily", "Mexico", "male");
 
 INSERT INTO persons
-  (first_name, last_name, age, date_missing, organization, country_origin, is_found, gender)
+  (first_name, last_name, age, date_missing, organization, country_origin, gender)
 VALUES
-  ("Jin Woo", "Ham", " ", 05-29-2017, "Daily NK", "Mexico", "0", "male");
+  ("Jin Woo", "Ham", " ", 05-29-2017, "Daily NK", "Mexico", "male");

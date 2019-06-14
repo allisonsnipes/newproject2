@@ -8,7 +8,6 @@ exports.up = function (knex, Promise) {
     table.string('organizations').notNullable()
     table.string('country_origin').notNullable()
     table.date('date_missing')
-    table.boolean('is_found').defaultTo(false)
   })
 }
 

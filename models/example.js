@@ -6,52 +6,28 @@
 // =============================================================
 const knex = require('../config/connection.js')
 
-/**
- * Queries the missingDB database
- *
- * @class missingDB
- */
-// Class can be anything with any name
+// Queries the missingDB database
 class Missing {
   constructor (table = 'persons') {
     this.table = table
   }
 
-  /**
-   *
-   * Find all missing persons in the table
-   * @returns Promise
-   * @memberof persons
-   */
-  findAll () {
-    return knex.select()
-      .table(this.table)
+  search () {
+    return knex.select().table(this.table)
   }
 
-  /**
- * create a new record
- *
- * @param {Object} values The values to insert in the form of {column: value}
- * @returns Promise
- * @memberof persons
- */
-  create (values) {
-    return knex(this.table)
-      .returning('id')
-      .insert(values)
+  // create a new data of missing person
+  create (missing) {
+    return knex('persons').insert(missing, '*')
+  }
+  // searches database by id
+  find (id) {
+    return knex('persons').where('id', id).first()
   }
 
-  /**
-   * delete 1 or more records by criteria
-   *
-   * @param {Object} where The where clause in the form of {column: value}
-   * @returns Promise
-   * @memberof persons
-   */
-  destroy (where) {
-    return knex(this.table)
-      .where(where)
-      .del()
+  // deletes records by id
+  delete (id) {
+    return knex('persons').where('id', id).del()
   }
 }
 
