@@ -29,19 +29,19 @@ module.exports = function (app) {
       })
   })
 
-  app.post('/', function (req, res) { // post request do some action
-  //   Missing.create({
-  //     first_name: req.body.first_name,
-  //     last_name: req.body.last_name,
-  //     age: req.body.age,
-  //     date_missing: req.body.date_missing,
-  //     organizations: req.body.organizations,
-  //     country_origin: req.body.country_origin,
-  //     is_found: req.body.is_found,
-  //     gender: req.body.gender
-  //   }
-  //     .then(() => res.sendStatus(200))
-  //   )
+  app.post('/list', function (req, res) { // post request do some action
+    Missing.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      age: req.body.age,
+      date_missing: req.body.date_missing,
+      organizations: req.body.organizations,
+      country_origin: req.body.country_origin,
+      is_found: req.body.is_found,
+      gender: req.body.gender
+    }
+      .then(() => res.sendStatus(200))
+    )
     console.log(req.body)
   }
   )

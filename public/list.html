@@ -72,32 +72,40 @@
   <br>
 
   <div class="container">
-    <!-- not found list -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="journList notFound">
-          <ul>
-            <li class="ui-state-default">
-              <div class="checkbox">
-                
-              </div>
-            </li>
-          </ul>
+    <div class="row mt-2">
+      <div class="col-lg-12">
+        <div class="card border rounded border-primary">
+          <div class="card-header text-light bg-primary">
+            <h3>Missing Journalist</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <!-- Table Head -->
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Date Missing</th>
+                    <th>Country of Origin</th>
+                    <th>Organization</th>
+                  </tr>
+                </thead>
+                <!-- Table Body -->
+                <tbody id="journalistInfo">
+                  <!-- use SQL data -->
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- found list -->
-     <div class="row">
-       <div class="col-md-6">
-         <div class="journList havFound">
-
-         </div>
-       </div>
-     </div>
-    
-        <button class="delJourn">Delete Journalist</button>
-        <button class="addJourn">Add Journalist</button>
+     
   </div>
 
 </body>
