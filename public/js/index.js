@@ -138,17 +138,17 @@ $(document).ready(function () {
     var gender = $("input[name='gender']:checked").val()
     var datemissing = $('#dateMissing').val()
     var countryoforgin = $('#countySelection').val()
-    var organization = $('#org').val()
+    var organizations = $('#org').val()
     var newjournalist = {
-      firstname,
-      lastname,
-      age,
-      gender,
-      datemissing,
-      countryoforgin,
-      organization
+      first_name: firstname,
+      last_name: lastname,
+      age: age,
+      gender: gender,
+      organizations: organizations,
+      country_origin: countryoforgin,
+      date_missing: datemissing
     }
-    console.log(firstname)
+    console.log(newjournalist)
     $.post('/list', newjournalist)
   })
 })
