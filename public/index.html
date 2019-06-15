@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <title>Uprooted: The Missing Journalist App</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -47,7 +49,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-50" src="../../public/imgs/iStock_000009025139Medium1.jpg" alt="First slide">
+          <!-- <img class="d-block w-50" src="../../public/imgs/iStock_000009025139Medium1.jpg" alt="First slide">
         </div>
 
         <div class="carousel-item">
@@ -60,7 +62,7 @@
 
         <div class="carousel-item">
           <img class="d-block w-50" src="../../public/imgs/16796366_web1_190510-sfe-adachiraid1.jpg" alt="Third slide">
-        </div>
+        </div> -->
       </div>
 
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -76,8 +78,6 @@
 
   <br>
   <br>
-
-
 
   <div class="container">
     <div class="row">
@@ -101,14 +101,14 @@
               <input type="text" id="age">
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id="gend">
               <input type="radio" name="gender" value="male" checked> Male<br>
               <input type="radio" name="gender" value="female"> Female<br>
             </div>
 
             <div class="form-group">
               Date Missing:<br>
-              <input type="text" id="dateMissing">
+              <input type="text" id="dateMissing"><br><br>
 
               <label for="text">Select country:</label>
               <select class="form-control" id="countySelection">
@@ -394,8 +394,7 @@
   </div>
 
 </body>
-  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>

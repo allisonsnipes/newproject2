@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <title>Uprooted: The Missing Journalist App</title>
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <script src="/routes/htmlRoutes.js"></script>
+  <script src="/public/js/index.js"></script>
 </head>
 
 <body>
@@ -77,37 +79,44 @@
   <br>
 
   <div class="container">
-    <!-- not found list -->
-    <div class="row">
-      <div class="col-md-6">
-        <div class="journList notFound">
-          <ul>
-            <li class="ui-state-default">
-              <div class="checkbox">
-                
-              </div>
-            </li>
-          </ul>
+    <div class="row mt-2">
+      <div class="col-lg-12">
+        <div class="card border rounded border-primary">
+          <div class="card-header text-light bg-primary">
+            <h3>Missing Journalist</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped" id="jtable">
+                <!-- Table Head -->
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Date Missing</th>
+                    <th>Country of Origin</th>
+                    <th>Organization</th>
+                  </tr>
+                </thead>
+                <!-- Table Body -->
+                <tbody id="journalistInfo">
+                  <!-- use SQL data -->
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- found list -->
-     <div class="row">
-       <div class="col-md-6">
-         <div class="journList havFound">
-
-         </div>
-       </div>
-     </div>
-    
-        <button class="delJourn">Delete Journalist</button>
-        <button class="addJourn">Add Journalist</button>
+     
   </div>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+<script src="js/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 </script>
