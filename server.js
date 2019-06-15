@@ -5,8 +5,8 @@
 require('dotenv').config()
 
 const express = require('express')
-const exphbs = require('express-handlebars')
-const path = require('path')
+// const exphbs = require('express-handlebars')
+// const path = require('path')
 const bodyparser = require('body-parser')
 
 // const db = require('./models/example') // eslint-disable no-unused-consts
@@ -23,12 +23,12 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // Handlebars
-app.engine(
-  'handlebars',
-  exphbs({ extname: 'handlebars', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts') })
-)
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'handlebars')
+// app.engine(
+//   'handlebars',
+//   exphbs({ extname: 'handlebars', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts') })
+// )
+// app.set('views', path.join(__dirname, 'views'))
+// app.set('view engine', 'handlebars')
 
 // Routes
 require('./routes/apiRoutes')(app)

@@ -9,18 +9,7 @@ const Missing = require('../models/example')
  */
 
 module.exports = function (app) {
-  app.get('/', function (req, res) {
-    res.render('index')
-  })
-
-  // Get all examples
-  app.get('/list', function (req, res) {
-    Missing.search()
-      .then(function (result) {
-        res.json(result)
-      })
-  })
-  app.get('/:id', function (req, res, next) {
+  app.get('/id/:id', function (req, res, next) {
     Missing.find(req.params.id).then(persons => {
       if (persons) {
         res.json(persons)
