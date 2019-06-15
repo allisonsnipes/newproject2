@@ -1,22 +1,21 @@
 $(document).ready(function () {
   console.log('ready!')
 
-  function appendJournalist() {
-    console.log("trst");
+  function appendJournalist () {
+    console.log('trst')
 
     $.get('/api/journalist', function (data) {
       console.log(data)
-      for (let i=0; i<data.length; i++) {
-        $("#jtable").append(
-          $("<tr>").append(
-            $("<td>").text(data[i].first_name),
-            $("<td>").text(data[i].last_name),
-            $("<td>").text(data[i].age),
-            $("<td>").text(data[i].date_missing),
-            $("<td>").text(data[i].organization),
+      for (let i = 0; i < data.length; i++) {
+        $('#jtable').append(
+          $('<tr>').append(
+            $('<td>').text(data[i].first_name),
+            $('<td>').text(data[i].last_name),
+            $('<td>').text(data[i].age),
+            $('<td>').text(data[i].date_missing),
+            $('<td>').text(data[i].organization)
           )
         )
-
       }
     })
   }
@@ -150,5 +149,4 @@ $(document).ready(function () {
     console.log(firstname)
     $.post('/', newjournalist)
   })
-
 })
