@@ -12,12 +12,12 @@ const Knex = require('knex')(require('../knexfile')[ENV])
 
 function getConnection () {
   var con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'missingDB'
+    host: "localhost",
+    user: "root" ,
+    password: "",
+    database: "missingDB"
   })
 }
 
 // Exports the connection for other files to use working changes
-module.exports = Knex
+module.exports = Knex;
