@@ -42,4 +42,28 @@ module.exports = function (app) {
       res.json(data)
     })
   })
+
+  // get a person with params
+  //   app.get('/:id', function (req, res, next) {
+  //     Missing.find(req.params.id).then(persons => {
+  //       if (persons) {
+  //         res.json(persons)
+  //       } else {
+  //         next(new Error('Person not found'))
+  //       }
+  //     })
+  //   })
+  // }
+
+  // POST route for saving a new todo. You can create a todo using the data on req.body
+  // app.post('/list', function (req, res) {
+  //   Missing.create(req.body)
+  //     .then(persons => {
+  //       console.log(`
+  //         *****
+  //         Comments.create():
+  //         ${persons}`)
+
+//       res.json(persons)
+//     })
 }

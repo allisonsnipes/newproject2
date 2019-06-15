@@ -12,8 +12,10 @@ $(document).ready(function () {
             $('<td>').text(data[i].first_name),
             $('<td>').text(data[i].last_name),
             $('<td>').text(data[i].age),
+            $('<td>').text(data[i].gender),
             $('<td>').text(data[i].date_missing),
-            $('<td>').text(data[i].organization)
+            $('<td>').text(data[i].country_origin),
+            $('<td>').text(data[i].organizations)
           )
         )
       }
@@ -147,6 +149,6 @@ $(document).ready(function () {
       organization
     }
     console.log(firstname)
-    $.post('/', newjournalist)
+    $.post('/list', newjournalist)
   })
 })
