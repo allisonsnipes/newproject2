@@ -9,7 +9,7 @@ const Missing = require('../models/example')
  */
 
 module.exports = function (app) {
-  app.get('/id/:id', function (req, res, next) {
+  app.get('/', function (req, res, next) {
     Missing.find(req.params.id).then(persons => {
       if (persons) {
         res.json(persons)
