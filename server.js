@@ -22,11 +22,7 @@ app.use(bodyparser.json())
 app.use(express.json())
 app.use(express.static('public'))
 
-<<<<<<< HEAD
-// // Handlebars
-=======
 // Handlebars
->>>>>>> 8a7ca73b3ae3f5291b24c31d52ab184b59fbd3cc
 // app.engine(
 //   'handlebars',
 //   exphbs({ extname: 'handlebars', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts') })

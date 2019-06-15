@@ -37,4 +37,9 @@ module.exports = function (app) {
       })
     })
   })
+  app.get('/api/journalist', function (req, res) {
+    Missing.search().then(function (data) {
+      res.json(data)
+    })
+  })
 }
