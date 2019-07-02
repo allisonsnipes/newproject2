@@ -1,5 +1,5 @@
 // Dependecies
-var path = require('path')
+const Example = require('../models/example')
 /**
  * htmlRoutes: This routes file renders views e.g. handlebars pages
  * It differs from the apiRoutes.js file in that it responds to the client/view requests with a
@@ -7,16 +7,41 @@ var path = require('path')
  *
  */
 module.exports = function (app) {
+  // load index page
   app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '/../public/index.html'))
+    Example.findAll()
+      .then(function (dbExamples) {
+        res.render('index', {
+          msg: 'Welcome!',
+          examples: dbExamples
+        })
+      })
   })
 
-  // Get all examples
-  app.get('/list', function (req, res) {
-    res.sendFile(path.join(__dirname, '/../public/list.html'))
+  // Load example page and pass in an example by id
+  app.get('/example/:id', function (req, res) {
+    Example.find({ id: req.params.id })
+      .then(function (dbExample) {
+        res.render('example', {
+          example: dbExample
+        })
+      })
   })
 
-  app.get('/contact', function (req, res) {
-    res.sendFile(path.join(__dirname, '/../public/contact.html'))
+  // Render 404 page for any unmatched routes
+  app.get('*', function (req, res) {
+    res.render('404')
   })
 }
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/../public/index.html'))
+// })
+
+// // Get all examples
+// app.get('/list', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/../public/list.html'))
+// })
+
+// app.get('/contact', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/../public/contact.html'))
+// })
