@@ -1,39 +1,75 @@
 document.addEventListener('DOMContentLoaded', function () {
   console.log('ready!')
+  appendJournalist()
 
   function appendJournalist() {
     console.log('trst')
-
-    //set up http request
-    var xhr = new XMLHttpRequest();
-
-    //set up listener to process completed requests
-    xhr.onload = function () {
-      //process our return data
-      if (xhr.status >= 200 && xhr.status < 300) {
-        //request is successful 
-        console.log('success', xhr);
+    fetch('/api/examples')
+      .then(function (response) {
+        return response.json()
+      }).then(function (data) {
         console.log(data)
         for (let i = 0; i < data.length; i++) {
-          document.getElementById('jtable').append(
-            document.querySelector('tr').append(
-              document.querySelectorAll('#jtable td').text(data[i].first_name),
-              document.querySelectorAll('#jtable td').text(data[i].last_name),
-              document.querySelectorAll('#jtable td').text(data[i].age),
-              document.querySelectorAll('#jtable td').text(data[i].gender),
-              document.querySelectorAll('#jtable td').text(data[i].date_missing),
-              document.querySelectorAll('#jtable td').text(data[i].country_origin),
-              document.querySelectorAll('#jtable td').text(data[i].organizations)
-            )
-          )
+          var table = document.getElementById('jtable')
+          var row = table.insertRow(1)
+          var first_name = row.insertCell(0)
+          var last_name = row.insertCell(1)
+          var age = row.insertCell(2)
+          var gender = row.insertCell(3)
+          var date_missing = row.insertCell(4)
+          var country_origin = row.insertCell(5)
+          var organizations = row.insertCell(6)
+          first_name.innerHTML = data[i].first_name
+          last_name.innerHTML = data[i].last_name
+          age.innerHTML = data[i].age
+          gender.innerHTML = data[i].gender
+          date_missing.innerHTML = data[i].date_missing
+          country_origin.innerHTML = data[i].country_origin
+          organizations.innerHTML = data[i].organizations
+          // document.getElementById('jtable').append(
+          //   document.querySelector('tr').append(
+          //     '<td>' + data[i].first_name + '</td>'
+          //     // document.querySelectorAll('#jtable td').text(data[i].first_name),
+          //     // document.querySelectorAll('#jtable td').text(data[i].last_name),
+          //     // document.querySelectorAll('#jtable td').text(data[i].age),
+          //     // document.querySelectorAll('#jtable td').text(data[i].gender),
+          //     // document.querySelectorAll('#jtable td').text(data[i].date_missing),
+          //     // document.querySelectorAll('#jtable td').text(data[i].country_origin),
+          //     // document.querySelectorAll('#jtable td').text(data[i].organizations)
+          //   )
+          // )
         }
-      } else {
-        //this will run when theres an error
-        console.log('the request failed');
-      }
-    //create get requests here
-    xhr.open('GET', '/api/journalist');
-    xhr.send();
+      })
+    // set up http request
+    // var xhr = new XMLHttpRequest()
+
+    // // set up listener to process completed requests
+    // xhr.onload = function () {
+    //   // process our return data
+    //   if (xhr.status >= 200 && xhr.status < 300) {
+    //     // request is successful
+    //     console.log('success', xhr)
+    //     console.log(data)
+    //     for (let i = 0; i < data.length; i++) {
+    //       document.getElementById('jtable').append(
+    //         document.querySelector('tr').append(
+    //           document.querySelectorAll('#jtable td').text(data[i].first_name),
+    //           document.querySelectorAll('#jtable td').text(data[i].last_name),
+    //           document.querySelectorAll('#jtable td').text(data[i].age),
+    //           document.querySelectorAll('#jtable td').text(data[i].gender),
+    //           document.querySelectorAll('#jtable td').text(data[i].date_missing),
+    //           document.querySelectorAll('#jtable td').text(data[i].country_origin),
+    //           document.querySelectorAll('#jtable td').text(data[i].organizations)
+    //         )
+    //       )
+    //     }
+    //   } else {
+    //     // this will run when theres an error
+    //     console.log('the request failed')
+    //   }
+    //   // create get requests here
+    //   xhr.open('GET', '/api/journalist')
+    //   xhr.send()
 
     //   appendJournalist()
     //   console.log('i am looking for indexjs file')
@@ -168,5 +204,5 @@ document.addEventListener('DOMContentLoaded', function () {
     //     $.post('/list', newjournalist)
     //   })
     // })
+  }
 })
-}
