@@ -8,31 +8,6 @@ const path = require('path')
  *
  */
 module.exports = function (app) {
-  // load index page
-  // app.get('/', function (req, res) {
-  //   Missing.findAll()
-  //     .then(function (dbMissing) {
-  //       res.render('index', {
-  //         msg: 'Welcome!',
-  //         examples: dbMissing
-  //       })
-  //     })
-  // })
-  // Load example page and pass in an example by id
-  // app.get('/example/:id', function (req, res) {
-  //   Missing.find({ id: req.params.id })
-  //     .then(function (dbMissing) {
-  //       res.render('example', {
-  //         example: dbMissing
-  //       })
-  //     })
-  // })
-
-  // // Render 404 page for any unmatched routes
-  // app.get('*', function (req, res) {
-  //   res.render('404')
-  // })
-
   app.get('/index', function (req, res) {
     res.sendFile(path.join(__dirname, '/../public/index.html'))
   })
@@ -45,6 +20,30 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '/../public/contact.html'))
   })
 }
+// load index page
+// app.get('/', function (req, res) {
+//   Missing.findAll()
+//     .then(function (dbMissing) {
+//       res.render('index', {
+//         msg: 'Welcome!',
+//         examples: dbMissing
+//       })
+//     })
+// })
+// Load example page and pass in an example by id
+// app.get('/example/:id', function (req, res) {
+//   Missing.find({ id: req.params.id })
+//     .then(function (dbMissing) {
+//       res.render('example', {
+//         example: dbMissing
+//       })
+//     })
+// })
+
+// // Render 404 page for any unmatched routes
+// app.get('*', function (req, res) {
+//   res.render('404')
+// })
 
 // // Get all examples
 // app.get('/list', function (req, res) {
