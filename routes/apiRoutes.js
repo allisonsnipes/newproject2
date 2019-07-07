@@ -1,6 +1,5 @@
 // Dependencies
 const Missing = require('../models/example')
-const multer = require('multer')
 const path = require('path')
 
 /**
