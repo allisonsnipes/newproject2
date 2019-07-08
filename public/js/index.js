@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	document.getElementsByClassName('slider').slick({
 		// normal options...
-		infinite: false,
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3,
 
 		// the magic
 		responsive: [
